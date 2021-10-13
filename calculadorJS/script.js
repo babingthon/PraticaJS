@@ -162,7 +162,3 @@ function updateDisplay(text) {
         display.textContent += text.toLocaleString('BR');
     }
 };
-
-
-
-

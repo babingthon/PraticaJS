@@ -62,7 +62,7 @@ header h1 {
 }
 
 form {
-  position: relative;
+  position: center;
   width: 500px;
   max-width: 100%;
 }

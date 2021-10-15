@@ -1,6 +1,18 @@
 const getPokemonURL = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
-const liModal = document.querySelector('.pokedex').addEventListener('click', event => {
-      console.log(event.target);
+
+const buttonSearch = document.querySelector('button').addEventListener('click', event => {
+  event.preventDefault();
+
+  const valueInput = document.querySelector('input').value;
+
+  /*if(valueInput == '') {
+    const getPokemonURL = (id) => `https://pokeapi.co/api/v2/pokemon/${id}`;
+  } else {
+    const getPokemonURL = () => `https://pokeapi.co/api/v2/pokemon/nome_do_pokemon`;
+  }*/
+
+console.log(valueInput);
+ 
 })
 
 const generatePokemonPromises = () =>
@@ -10,19 +22,11 @@ const generatePokemonPromises = () =>
       fetch(getPokemonURL(index + 1)).then((response) => response.json())
     );
 
-const openModal = (event) => {
-  document.getElementById('modal').classList.add('active');
-
-}
-
-const closeModal = () => document.getElementById('modal').classList.remove('active');
-
 const generateHTML = (pokemons) =>
   pokemons.reduce((accumulator, { name, id, types, abilities }) => {
     const elementTypes = types.map((typeInfo) => typeInfo.type.name);
     const elementAbilities = abilities.map((abilitiesTypes) =>abilitiesTypes.ability.name);
-    console.log(elementAbilities);
-
+    
     accumulator += `
     <li class="card ${elementTypes[0]}">
             <img class="card-image" alt="${name}" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png">

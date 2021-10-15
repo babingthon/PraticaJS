@@ -30,9 +30,10 @@ button:focus {
 }
  
 form {
-	position: relative;
-	width: 500px;
-	max-width: 100%;
+	display: flex;
+	margin: auto;
+	background-color: #FFF;
+	border-radius: 50px;
 }
   
 form input {
@@ -44,15 +45,14 @@ form input {
 }
   
 form button {
-	position: absolute;
-	top: 2px;
-	right: 2px;
-	background-color: #8d56fd;
-	border: 0;
+	margin: 5px;
 	border-radius: 50px;
-	color: #fff;
+	background-color: #8d56fd;
 	font-size: 16px;
-	padding: 13px 30px;
+	color: #fff;
+	border: 0;
+	outline: 0;
+	padding: 10px 20px;
 }
 
 h2 {
